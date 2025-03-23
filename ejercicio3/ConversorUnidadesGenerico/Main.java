@@ -20,7 +20,7 @@ public class Main {
     }
 
     // Método genérico para mostrar el resultado
-    public static <T> void mostrarResultado(Unidad<T> resultado) {
+    public static <T extends Number> void mostrarResultado(Unidad<T> resultado) {
         if (resultado != null) {
             System.out.println("Resultado: " + resultado.getValor() + " " + resultado.getTipoUnidad());
         } else {

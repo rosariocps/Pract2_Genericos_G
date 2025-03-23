@@ -36,5 +36,10 @@ public class Conversor<T extends Number> {
         return (T) Double.valueOf(resultado); //Regresamos a tipo <T>
     }
 
+    // Retorna una nueva Unidad<T> con el valor convertido
+    public Unidad<T> convertirUnidad(Unidad<T> unidad, String unidadDestino) {
+        T valorConvertido = convertir(unidad, unidadDestino);
+        return new Unidad<>(valorConvertido, unidadDestino);
+    }    
 
 }

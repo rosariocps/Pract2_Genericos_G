@@ -2,7 +2,7 @@ package ejercicio3.ConversorUnidadesGenerico;
 
 public class Unidad<T> {
     private T valor;
-    private T tipoUnidad;
+    private String tipoUnidad;
 
     //Contructor
     public Unidad(T valor, T tipoUnidad){
