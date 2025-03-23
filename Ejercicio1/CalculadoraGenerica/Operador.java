@@ -1,4 +1,4 @@
-package Ejercicio2.CalculadoraGenerica;
+package Ejercicio1.CalculadoraGenerica;
 
 public class Operador<T extends Number>{ 
     //Number es una clase abstracta que solo recibe datos de tipos numericos primitivos

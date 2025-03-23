@@ -1,4 +1,4 @@
-package Ejercicio2.CalculadoraGenerica;
+package Ejercicio1.CalculadoraGenerica;
 
 import java.util.Scanner;
 
