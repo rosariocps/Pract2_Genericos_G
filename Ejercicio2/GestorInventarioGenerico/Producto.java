@@ -11,4 +11,35 @@ public class Producto<T extends Number> {
         this.precio = precio;
         this.cantidad = cantidad;
     }
+
+    //getters
+    public String getNombre() {
+        return nombre;
+    }
+
+    public T getPrecio() {
+        return precio;
+    }
+
+    public T getCantidad() {
+        return cantidad;
+    }
+
+    //setters
+    public void setPrecio(T precio) {
+        this.precio = precio;
+    }
+
+    public void setCantidad(T cantidad) {
+        this.cantidad = cantidad;
+    }
+
+    public double calcularValorTotal() {
+        return precio.doubleValue() * cantidad.doubleValue();
+    }
+
+    @Override
+    public String toString() {
+        return "Producto: " + nombre + " | Precio: " + precio + " | Cantidad: " + cantidad;
+    }
 }
