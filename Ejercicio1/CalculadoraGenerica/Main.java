@@ -103,7 +103,7 @@ public class Main {
             //Verificamos que la opcion sea un numero
             if (!scanner.hasNextInt()){
                 System.out.println("Error: debe ingresar una opcion valida");
-                scanner.next();
+                scanner.next(); //para descartar la entrada actual del usuario
                 continue;
             }
             opcion = scanner.nextInt();
