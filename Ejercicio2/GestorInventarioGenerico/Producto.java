@@ -3,10 +3,10 @@ package Ejercicio2.GestorInventarioGenerico;
 public class Producto<T extends Number> {
     private String nombre;
     private T precio;
-    private T cantidad;
+    private int cantidad;
 
     //constructor
-    public Producto(String nombre, T precio, T cantidad) {
+    public Producto(String nombre, T precio, int cantidad) {
         this.nombre = nombre;
         this.precio = precio;
         this.cantidad = cantidad;
@@ -21,7 +21,7 @@ public class Producto<T extends Number> {
         return precio;
     }
 
-    public T getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
@@ -30,12 +30,12 @@ public class Producto<T extends Number> {
         this.precio = precio;
     }
 
-    public void setCantidad(T cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
     public double calcularValorTotal() {
-        return precio.doubleValue() * cantidad.doubleValue();
+        return precio.doubleValue() * cantidad;
     }
 
     @Override
