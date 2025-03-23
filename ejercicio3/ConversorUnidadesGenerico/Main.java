@@ -2,6 +2,7 @@ package ejercicio3.ConversorUnidadesGenerico;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Scanner;
 
 public class Main {
 
@@ -26,4 +27,53 @@ public class Main {
             System.out.println("Error: No se pudo realizar la conversión.");
         }
     }
+
+    public static void main(String[] args) {
+        try (Scanner scanner = new Scanner(System.in)) {
+            Conversor<Double> conversor = new Conversor<>();
+            
+            int opcion;
+            do {
+                System.out.println("\nMenú de ConversorUnidadesGenerico:");
+                System.out.println("1. Convertir longitud");
+                System.out.println("2. Convertir masa");
+                System.out.println("3. Convertir temperatura");
+                System.out.println("4. Convertir tiempo");
+                System.out.println("5. Salir");
+                System.out.print("Seleccione una opción: ");
+                opcion = scanner.nextInt();
+                scanner.nextLine();
+                
+                if (opcion >= 1 && opcion <= 4) {
+                    System.out.print("Ingrese el valor numérico: ");
+                    double valor = scanner.nextDouble();
+                    scanner.nextLine();
+                    
+                    System.out.print("Unidad de origen: ");
+                    String unidadOrigen = scanner.nextLine().toLowerCase();
+                    
+                    System.out.print("Unidad de destino: ");
+                    String unidadDestino = scanner.nextLine().toLowerCase();
+                    
+                    // Creamos la unidad original
+                    Unidad<Double> unidad = new Unidad<>(valor, unidadOrigen);
+                    
+                    // Validamos compatibilidad usando método genérico
+                    if (validarCompatibilidad(unidadOrigen, unidadDestino)) {
+                        Unidad<Double> resultado = conversor.convertirUnidad(unidad, unidadDestino);
+                        mostrarResultado(resultado); // Usamos método genérico
+                    } else {
+                        System.out.println("Unidades incompatibles. Intente nuevamente.");
+                    }
+                } else if (opcion != 5) {
+                    System.out.println("Opción inválida.");
+                }
+                
+            } while (opcion != 5);
+            
+            System.out.println("Programa finalizado.");
+        }
+    }
+
 }
+
