@@ -1,4 +1,4 @@
-package Ejercicio2;
+package Ejercicio2.CalculadoraGenerica;
 
 public class Operador<T extends Number>{
     private T valor1;
