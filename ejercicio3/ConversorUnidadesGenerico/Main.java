@@ -35,10 +35,10 @@ public class Main {
             int opcion;
             do {
                 System.out.println("\nMenú de ConversorUnidadesGenerico:");
-                System.out.println("1. Convertir longitud");
-                System.out.println("2. Convertir masa");
-                System.out.println("3. Convertir temperatura");
-                System.out.println("4. Convertir tiempo");
+                System.out.println("1. Convertir longitud (metros, pies, pulgadas)");
+                System.out.println("2. Convertir masa (kilogramos, libras, onzas)");
+                System.out.println("3. Convertir temperatura (Celsius, Fahrenheit, Kelvin)");
+                System.out.println("4. Convertir tiempo (segundos, minutos, horas)");
                 System.out.println("5. Salir");
                 System.out.print("Seleccione una opción: ");
                 opcion = scanner.nextInt();
