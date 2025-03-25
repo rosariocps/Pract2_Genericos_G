@@ -1,12 +1,13 @@
 package Ejercicio1;
 
 class DemoMetodoGenerico {
+    // metodo generico para comparar dos arrays
     static <T extends Comparable<T>> boolean igualArrays(T[] x, T[] y) {
-        if (x.length != y.length) return false;
-        for (int i = 0; i < x.length; i++) {
-            if (!x[i].equals(y[i])) return false;
+        if (x.length != y.length) return false; // si tienen diferente tamaño--falso
+        for (int i = 0; i < x.length; i++) { // aqui recorremos los elementos del array
+            if (!x[i].equals(y[i])) return false; // si hay un elemento diferente --falso
         }
-        return true;
+        return true; // si todos son iguales-- verdadero
     }
 
     public static void main(String[] args) {
