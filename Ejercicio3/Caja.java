@@ -1,9 +1,10 @@
 package Ejercicio3;
 
+//clas generica Caja
 public class Caja<T> {
     private String color;
     private T contenido;
-
+    //constructor
     public Caja(String color, T contenido) {
         this.color = color;
         this.contenido = contenido;
