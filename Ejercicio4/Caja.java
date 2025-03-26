@@ -6,13 +6,16 @@ public class Caja<T> {
     private T contenido;
     
     //Constructor
-    public Caja(String color, T contenido) {
+    public Caja(String color) {
         this.color = color;
-        this.contenido = contenido;
     }
 
     public String getColor() {
         return color;
+    }
+
+    public void setContenido(T contenido) {
+        this.contenido = contenido;
     }
 
     public T getContenido() {
