@@ -9,8 +9,11 @@ public class Golosina {
         this.peso = peso;
     }
 
-    @Override
-    public String toString() {
-        return "Golosina: " + nombre + " - " + peso + "g";
+    public String getNombre() {
+        return nombre;
+    }
+
+    public double getPeso() {
+        return peso;
     }
 }

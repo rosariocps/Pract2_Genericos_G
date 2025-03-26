@@ -2,19 +2,25 @@ package Ejercicio3;
 
 public class Principal {
     public static void main(String[] args) {
-        Cajoneria cajoneria = new Cajoneria(); //objeto cajoneria vacia
-        //creamos cajas con sus colores y contenidos
-        Caja<String> caja1 = new Caja<>("Rojo", "Documentos");
-        Caja<Integer> caja2 = new Caja<>("Azul", 100);
-        //creamos cajas de tipos Golosina y Chcolatina con su color y contenido
-        Caja<Golosina> caja3 = new Caja<>("Verde", new Golosina("Caramelo", 0.2));
-        Caja<Chocolatina> caja4 = new Caja<>("Amarillo", new Chocolatina("Sublime"));
-        //agregamos todas las cajas a la cajoneria (lista)
-        cajoneria.agregarCaja(caja1);
-        cajoneria.agregarCaja(caja2);
-        cajoneria.agregarCaja(caja3);
-        cajoneria.agregarCaja(caja4);
-        System.out.println("Contenido de la Cajoneria:");
-        cajoneria.mostrarCajas(); // y mostranmos todas las cajas q estan dentro de cajoneria
+        Cajoneria<Golosina> cajoneria = new Cajoneria<>(2);
+
+        // Cajas con color
+        Caja<Golosina> caja1 = new Caja<>("Rojo");
+        caja1.setContenido(new Golosina("Chicle", 0.1));
+
+        Caja<Golosina> caja2 = new Caja<>("Azul");
+        caja2.setContenido(new Golosina("Caramelo", 0.2));
+
+        // Agregar cajas a la cajonería
+        cajoneria.add(caja1);
+        cajoneria.add(caja2);
+
+        // Mostrar el contenido de cada caja
+        for (Caja<Golosina> caja : cajoneria) {
+            System.out.println("Caja color: " + caja.getColor() +
+                    " -> Golosina: " + caja.getContenido().getNombre() +
+                    " (Peso: " + caja.getContenido().getPeso() + ")");
+        }
     }
 }
+

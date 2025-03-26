@@ -1,23 +1,27 @@
 package Ejercicio3;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Iterator;
 
-public class Cajoneria {
-    private List<Caja<?>> cajas; //lista para almacenar cajas
+public class Cajoneria<T> implements Iterable<Caja<T>> {
+    private ArrayList<Caja<T>> cajas = new ArrayList<>();
+    private int tope;
 
-    //constructor
-    public Cajoneria() {
-        this.cajas = new ArrayList<>();
+    public Cajoneria(int tope) {
+        this.tope = tope;
     }
 
-    public void agregarCaja(Caja<?> caja) {
-        cajas.add(caja); //agregamos una caja
-    }
-    //para mostrar las cajas almacenadas
-    public void mostrarCajas() {
-        for (Caja<?> caja : cajas) { //recorremos en la lista
-            System.out.println(caja);
+    public void add(Caja<T> caja) {
+        if (cajas.size() < tope) {
+            cajas.add(caja);
+        } else {
+            throw new RuntimeException("No caben más cajas en la cajonería");
         }
     }
+
+    @Override
+    public Iterator<Caja<T>> iterator() {
+        return cajas.iterator();
+    }
 }
+
