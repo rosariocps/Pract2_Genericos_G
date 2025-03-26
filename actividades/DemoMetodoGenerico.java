@@ -26,7 +26,6 @@ class DemoMetodoGenerico {
             System.out.println("nums es igual a nums4");
         //if (igualArrays(nums,dvals))                       
         //    System.out.println("nums es igual a dvals");    
-        if (igualArrays(nums,dvals))                       
-            System.out.println("nums es igual a dvals");
+
      }
 }
